@@ -1,4 +1,4 @@
-// determine if contributing or tests sections are displayed
+// function to determine if contributing or tests sections are displayed
 const createContribute = contributeText => {
   if (!contributeText) {
     return '';
@@ -31,7 +31,7 @@ return sectionTitle;
 function generateMarkdown(data) {
   var data = `
   # ${data.title}
-  ![License](https://img.shields.io/badge/license-${data.license}-blue.svg)
+  ![](https://img.shields.io/badge/license-${data.license}-blue.svg)
   ## Table of Contents
   ### <a href='#description'>Description</a>
   ### <a href='#installation'>Installation</a>
