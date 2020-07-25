@@ -119,8 +119,8 @@ let mockData = {
     installation: 'The application should be invoked in a node.js command-line environment. However, this application will not be deployed, so it will need to be accessed via my github repository. The npm package Inquirer will need to be installed to run this application.',
     usage: 'You can quickly and easily generate a README file by using a command-line application to generate one. This allows the project creator to devote more time working on the project. A well- crafted one allows you to show off your work to other developers as well as potential employers. ',
     license: 'MIT',
-    confirmContribute: true,
-    contribute: 'Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.',
+    confirmContribute: false,
+    // contribute: 'Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.',
     confirmTests: true,
     tests: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     github: 'essennejaye',
@@ -141,29 +141,21 @@ const writeToFile = fileContent => {
             resolve({
                 ok: true,
                 message: 'File created!'
-            });
+             });
         });
     })
 }
 
 // function to initialize program
 const init = () => {
-    return inquirer.prompt(questions);
-}
-
-// // function call to initialize program 
-//  init () 
-//     .then(projectData => {
-//         console.log(projectData);
-        // return generateFile(projectData);
-   // })
-const markdownData = generateFile(mockData); 
-    // .then(markdownData => {
-         writeToFile(markdownData);
-    // })
-    // .then(writeFileResponse => {
-    //     console.log(writeFileResponse);
+    // inquirer.prompt(questions)
+    //     .then((inquirerResponses) => {
+    // generate markdown file and write readme file
+    writeToFile(generateFile({ ...mockData }))
     // })
     // .catch(err => {
     //     console.log(err);
     // })
+}
+// function call to initialize program 
+init();
