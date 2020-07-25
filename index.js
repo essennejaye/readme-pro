@@ -60,7 +60,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What license did you select for yur project? . (Required)',
-        choices: ['MIT', 'GNU GPLv3', 'Unlicense', 'None'],
+        choices: ['MIT', 'GPLv3', 'Apache2.0', 'LGPLv3', 'BSD'],
     },
     {
         type: 'confirm',

@@ -31,6 +31,7 @@ return sectionTitle;
 function generateMarkdown(data) {
   var data = `
   # ${data.title}
+  ![License](https://img.shields.io/badge/license-${data.license}-blue.svg)
   ## Table of Contents
   ### <a href='#description'>Description</a>
   ### <a href='#installation'>Installation</a>
